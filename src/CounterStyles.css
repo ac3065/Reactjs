@@ -1,0 +1,94 @@
+/* Basic container styles */
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgb(169, 142, 231), rgb(206, 202, 231));
+  color: white;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  
+}
+.panel{
+  border: 3px solid rgb(42, 87, 42);
+  box-sizing: border-box;
+  text-align: center;
+
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #96c93d;
+  position: relative;
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+
+}
+.counter-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
+  border-radius: 20%;
+  padding: 20px;
+  background-color: #da5a43;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.count-number {
+  font-size: 4rem;
+  color: #fff;
+  animation: pulse 0.5s ease-in-out;
+}
+
+/* Button styling */
+.button-group {
+  display: flex;
+  gap: 15px;
+}
+
+.counter-button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff416c, #a59997);
+  cursor: pointer;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.counter-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(235, 209, 209, 0.3);
+}
+
+.decrement {
+  background: linear-gradient(45deg, #ec305c, #c5381f);
+}
+
+.reset {
+  background: linear-gradient(45deg, #07b3da, #0400e0);
+}
+
+.increment {
+  background: linear-gradient(45deg, #00b09b, #96c93d);
+}
+
+.counter-button:active {
+  transform: translateY(0px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation for counter number */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
