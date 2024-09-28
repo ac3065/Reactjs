@@ -35,3 +35,7 @@ Reusable Packing Lists: Users can easily replicate packing lists for multiple tr
 React.js: For building the user interface and handling the dynamic state of the application.
 CSS: For styling the application to create a clean, user-friendly layout.
 PropTypes: To validate the data types of the props passed to components.
+
+
+![Screenshot 2024-09-29 002342](https://github.com/user-attachments/assets/1b177196-4726-47b2-8f73-8a298b50168e)
+![Screenshot 2024-09-29 002342](https://github.com/user-attachments/assets/eb467f90-65c1-4028-83dc-5e2c795de3e1)
