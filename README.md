@@ -20,8 +20,4 @@ Responsive design for seamless experience across devices.
 Packing Statistics:
 
 Real-time stats displaying the total number of items and the percentage packed.
-![Screenshot 2024-09-29 121852](https://github.com/user-attachments/assets/c87d3ece-d341-4219-86c5-95d94fb58cd0)
-![Screenshot 2024-09-29 121822](https://github.com/user-attachments/assets/384bc99d-fc07-4676-b92a-d6bea43c0664)
-![Screenshot 2024-09-29 121832](https://github.com/user-attachments/assets/84678754-4536-40b1-857b-fb709eadaf33)
-![Screenshot 2024-09-29 122239](https://github.com/user-attachments/assets/4ad71427-d115-474f-8be4-d728224499e4)
-![Screenshot 2024-09-29 122252](https://github.com/user-attachments/assets/569297ed-f356-4d1c-9bf8-f55496507f9f)
+
