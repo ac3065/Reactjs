@@ -11,11 +11,23 @@ const initialItems = [
 export default function App() {
   const [items, setItems] = useState(initialItems);
 
+  // Handle clearing the entire list
+  function handleClearList() {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete all items?"
+    );
+    if (confirmed) setItems([]);
+  }
+
   return (
     <div className="app">
       <Logo />
       <Form setItems={setItems} />
-      <PackingList items={items} setItems={setItems} />
+      <PackingList 
+        items={items} 
+        setItems={setItems} 
+        handleClearList={handleClearList} 
+      />
       <Stats items={items} />
     </div>
   );
@@ -75,7 +87,23 @@ Form.propTypes = {
   setItems: PropTypes.func.isRequired,
 };
 
-function PackingList({ items, setItems }) {
+function PackingList({ items, setItems, handleClearList }) {
+  const [sortBy, setSortBy] = useState("input");
+  let displayedItems = [...items];
+
+  // Filtering based on sortBy
+  if (sortBy === 'packed') {
+    displayedItems = displayedItems.filter(item => item.packed);
+  } else if (sortBy === 'unpacked') {
+    displayedItems = displayedItems.filter(item => !item.packed);
+  }
+
+  // Sorting based on sortBy
+  if (sortBy === 'description') {
+    displayedItems.sort((a, b) => a.description.localeCompare(b.description));
+  }
+  // Note: 'input' sortBy doesn't require sorting as items are already in input order
+
   const handleTogglePacked = (id) => {
     setItems(prevItems =>
       prevItems.map(item =>
@@ -91,7 +119,7 @@ function PackingList({ items, setItems }) {
   return (
     <div className='list'>
       <ul>
-        {items.map(item => (
+        {displayedItems.map(item => (
           <Item
             key={item.id}
             item={item}
@@ -99,7 +127,17 @@ function PackingList({ items, setItems }) {
             onDelete={handleDelete}
           />
         ))}
-      </ul>
+      </ul> 
+
+      <div className='actions'>
+        <select value={sortBy} onChange={e => setSortBy(e.target.value)}>
+          <option value='input'>Sort by Input Order</option>
+          <option value='description'>Sort by Description</option>
+          <option value='packed'>Show Only Packed</option>
+          <option value='unpacked'>Show Only Unpacked</option>
+        </select>
+        <button onClick={handleClearList}>Clear List</button>
+      </div>
     </div>
   );
 }
@@ -114,6 +152,7 @@ PackingList.propTypes = {
     })
   ).isRequired,
   setItems: PropTypes.func.isRequired,
+  handleClearList: PropTypes.func.isRequired,
 };
 
 function Item({ item, onTogglePacked, onDelete }) {
